@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.leratortech.toolkit</groupId>
+    <artifactId>toolkit</artifactId>
+    <version>2.0</version>
+    <packaging>pom</packaging>
+    <name>Toolkit</name>
+    <description>A collection of useful utility and basic classes</description>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <url>https://github.com/techsenger/toolkit</url>
+
+    <scm>
+        <connection>scm:git:https://github.com/nhthuc-dev/toolkit.git</connection>
+        <developerConnection>scm:git:https://github.com/nhthuc-dev/toolkit.git</developerConnection>
+        <url>https://github.com/nhthuc-dev/toolkit</url>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/nhthuc-dev/toolkit/issues</url>
+    </issueManagement>
+
+    <developers>
+        <developer>
+            <id>nhthuc-dev</id>
+            <name>nhthuc dev</name>
+        </developer>
+    </developers>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <slf4j.version>2.0.9</slf4j.version>
+        <log4j.version>2.21.1</log4j.version>
+        <junit.jupiter.version>5.10.2</junit.jupiter.version>
+        <assertj.version>3.25.3</assertj.version>
+        <com.fasterxml.jackson>2.16.0</com.fasterxml.jackson>
+    </properties>
+
+    <modules>
+        <module>toolkit-core</module>
+    </modules>
+</project>

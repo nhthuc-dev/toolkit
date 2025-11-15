@@ -1,0 +1,42 @@
+HELP.md
+target/
+**/src/main/**/target/
+**/src/test/**/target/
+**/src/test/**
+**/.mvn
+**/target
+!**/mvnw
+!**/mvnw.cmd
+!**/.gitattributes
+**/.gitignore
+infra/keycloak/providers/keycloak-event-listener-spi-kafka.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+out/
+
+### VS Code ###
+.vscode/
+*.code-workspace
