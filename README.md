@@ -1,6 +1,7 @@
 # Toolkit
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.leratortech/toolkit-core.svg)](https://search.maven.org/artifact/io.github.leratortech/toolkit-core/2.0.0/jar)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.leratortech/toolkit-core.svg?label=Maven%20Central)](https://repo1.maven.org/maven2/io/github/leratortech/toolkit-core/2.0.0/)
+[![GitHub Actions](https://github.com/leratortech/toolkit/actions/workflows/maven.yml/badge.svg)](https://github.com/leratortech/toolkit/actions/workflows/maven.yml)
 
 Toolkit is a comprehensive Java utility library providing helpers for collections, concurrency, file handling, JSON, numbers, OS utilities, security, text utilities, time utilities, tree structures, and validation. It is published on Maven Central.
 
