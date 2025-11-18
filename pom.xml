@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- GroupId publish lên Maven Central -->
-    <groupId>com.github.leratortech</groupId>
+    <groupId>io.github.leratortech</groupId>
     <artifactId>toolkit</artifactId>
     <version>2.0.0</version>
     <packaging>pom</packaging>
