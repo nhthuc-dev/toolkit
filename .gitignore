@@ -2,7 +2,6 @@ HELP.md
 target/
 **/src/main/**/target/
 **/src/test/**/target/
-**/src/test/**
 **/.mvn
 **/target
 !**/mvnw
@@ -34,7 +33,6 @@ infra/keycloak/providers/keycloak-event-listener-spi-kafka.jar
 /.nb-gradle/
 build/
 !**/src/main/**/build/
-!**/src/test/**/build/
 out/
 
 ### VS Code ###
