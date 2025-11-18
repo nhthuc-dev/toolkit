@@ -61,15 +61,19 @@
 
     <!-- OSSRH (Sonatype) để lên Maven Central -->
     <distributionManagement>
+        <!-- Snapshot đi qua Central Portal -->
         <snapshotRepository>
             <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+            <url>https://central.sonatype.com/repository/maven-snapshots</url>
         </snapshotRepository>
+
+        <!-- Release deploy qua API mới -->
         <repository>
             <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <url>https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2</url>
         </repository>
     </distributionManagement>
+
 
     <!-- Plugin dùng chung -->
     <build>
@@ -160,10 +164,12 @@
                         <extensions>true</extensions>
                         <configuration>
                             <serverId>ossrh</serverId>
-                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                            <!-- Base URL API mới -->
+                            <nexusUrl>https://ossrh-staging-api.central.sonatype.com/</nexusUrl>
                             <autoReleaseAfterClose>false</autoReleaseAfterClose>
                         </configuration>
                     </plugin>
+
                 </plugins>
             </build>
         </profile>
