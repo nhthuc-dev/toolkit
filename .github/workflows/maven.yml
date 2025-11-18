@@ -3,7 +3,7 @@ name: Release to Maven Central
 on:
   push:
     tags:
-      - "v*"    # ví dụ: v2.0.0, v2.0.1
+      - "v*"
 
 jobs:
   release:
@@ -27,23 +27,23 @@ jobs:
           echo "$GPG_PRIVATE_KEY" | gpg --batch --import
           gpg --list-keys
 
-      - name: Configure Maven settings for OSSRH
+      - name: Configure Maven settings for Central
         env:
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+          CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
+          CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
         run: |
           mkdir -p ~/.m2
           cat > ~/.m2/settings.xml <<EOF
           <settings>
             <servers>
               <server>
-                <id>ossrh</id>
-                <username>${OSSRH_USERNAME}</username>
-                <password>${OSSRH_PASSWORD}</password>
+                <id>central</id>
+                <username>${CENTRAL_USERNAME}</username>
+                <password>${CENTRAL_PASSWORD}</password>
               </server>
             </servers>
           </settings>
           EOF
 
-      - name: Deploy to OSSRH Staging
+      - name: Build & Publish to Maven Central (via Central Portal)
         run: mvn -B clean deploy -P release

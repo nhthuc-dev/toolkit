@@ -41,8 +41,6 @@
         </developer>
     </developers>
 
-
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -62,21 +60,12 @@
         <module>toolkit-core</module>
     </modules>
 
-    <!-- OSSRH (Sonatype) để lên Maven Central -->
-    <distributionManagement>
-        <!-- Snapshot đi qua Central Portal -->
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://central.sonatype.com/repository/maven-snapshots</url>
-        </snapshotRepository>
-
-        <!-- Release deploy qua API mới -->
-        <repository>
-            <id>ossrh</id>
-            <url>https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2</url>
-        </repository>
-    </distributionManagement>
-
+    <!--
+      Với Central Portal + central-publishing-maven-plugin,
+      không cần distributionManagement đến s01/ossrh nữa.
+      Plugin sẽ tự nói chuyện với Portal qua API.
+    -->
+    <!-- <distributionManagement> ... </distributionManagement> removed -->
 
     <!-- Plugin dùng chung -->
     <build>
@@ -106,7 +95,7 @@
         </pluginManagement>
     </build>
 
-    <!-- Profile release: ký GPG, attach sources/javadoc, staging Sonatype -->
+    <!-- Profile release: ký GPG, attach sources/javadoc, publish qua Central Portal -->
     <profiles>
         <profile>
             <id>release</id>
@@ -124,7 +113,6 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
-                                <!-- key không có passphrase nên không cần config thêm -->
                             </execution>
                         </executions>
                     </plugin>
@@ -150,9 +138,7 @@
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>3.6.0</version>
                         <configuration>
-                            <!-- Không fail build nếu Javadoc có warning/error -->
                             <failOnError>false</failOnError>
-                            <!-- Tắt doclint (Java 8+ hay lỗi HTML tag kiểu <T>) -->
                             <doclint>none</doclint>
                         </configuration>
                         <executions>
@@ -165,21 +151,21 @@
                         </executions>
                     </plugin>
 
-
-                    <!-- Sonatype Nexus staging -->
+                    <!-- Central Publishing Maven Plugin (mới) -->
                     <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.13</version>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.9.0</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>ossrh</serverId>
-                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                            <!-- trùng với <server><id>central</id> trong settings.xml -->
+                            <publishingServerId>central</publishingServerId>
+                            <!-- tự publish luôn, không cần vào Portal bấm tay -->
+                            <autoPublish>true</autoPublish>
+                            <!-- chờ tới khi state = published rồi mới kết thúc goal -->
+                            <waitUntil>published</waitUntil>
                         </configuration>
                     </plugin>
-
-
                 </plugins>
             </build>
         </profile>
