@@ -16,7 +16,7 @@
 
     <name>Toolkit Core</name>
     <description>Core utilities for the Toolkit project</description>
-    <url>https://github.com/nhthuc-dev/toolkit</url>
+    <url>https://github.com/leratortech/toolkit</url>
 
     <licenses>
         <license>
@@ -26,15 +26,15 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:https://github.com/nhthuc-dev/toolkit.git</connection>
-        <developerConnection>scm:git:https://github.com/nhthuc-dev/toolkit.git</developerConnection>
-        <url>https://github.com/nhthuc-dev/toolkit</url>
+        <connection>scm:git:https://github.com/leratortech/toolkit.git</connection>
+        <developerConnection>scm:git:https://github.com/leratortech/toolkit.git</developerConnection>
+        <url>https://github.com/leratortech/toolkit</url>
     </scm>
 
     <developers>
         <developer>
-            <id>nhthuc-dev</id>
-            <name>nhthuc dev</name>
+            <id>leratortech</id>
+            <name>lerator tech</name>
         </developer>
     </developers>
 
