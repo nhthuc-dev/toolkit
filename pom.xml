@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- GroupId publish lên Maven Central -->
-    <groupId>com.github.nhthucdev</groupId>
+    <groupId>com.leratortech.toolkit</groupId>
     <artifactId>toolkit</artifactId>
     <version>2.0.0</version>
     <packaging>pom</packaging>
@@ -19,6 +19,7 @@
         <license>
             <name>Apache License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
         </license>
     </licenses>
 
@@ -39,6 +40,8 @@
             <name>nhthuc dev</name>
         </developer>
     </developers>
+
+
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
