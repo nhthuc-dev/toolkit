@@ -174,11 +174,11 @@
                         <extensions>true</extensions>
                         <configuration>
                             <serverId>ossrh</serverId>
-                            <!-- Base URL API mới -->
-                            <nexusUrl>https://ossrh-staging-api.central.sonatype.com/</nexusUrl>
+                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>false</autoReleaseAfterClose>
                         </configuration>
                     </plugin>
+
 
                 </plugins>
             </build>
