@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.github.nhthucdev</groupId>
+        <groupId>com.leratortech.toolkit</groupId>
         <artifactId>toolkit</artifactId>
         <version>2.0.0</version>
     </parent>
